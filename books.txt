@@ -1,0 +1,5 @@
+The DevOps Handbook: How to Create World-class Agility, Reliability & Security in Technology Organisations* by Gene Kim, Jez Humble, Patrick Debois, and John Willis
+
+
+Agile Software Requirements* from Dean Leffingwell.
+
