@@ -105,7 +105,7 @@ Modify the main method to use command line parameters, if supplied, or to defaul
 ```
 #### Updating `pom.xml` to Set JAR Filename
 
-At the start of the project we built a JAR file with the version number and `jar-with-dependencies` added to the name.  This has slowly become problematic with the number of files where our version number is provided.  Therefore, we will update the `pom.xml` file to produce a JAR file called `devopsethods`.
+At the start of the project we built a JAR file with the version number and `jar-with-dependencies` added to the name.  This has slowly become problematic with the number of files where our version number is provided.  Therefore, we will update the `pom.xml` file to produce a JAR file called `devops`.
 
 The section we have to update is in the `<build><plugins>` section for the `maven-assembly-plugin`.  The updated version is below:
 
@@ -146,7 +146,7 @@ Now we need to update the `Dockerfile` for the application to use the new JAR fi
 
 ```dockerfile
 FROM openjdk:latest
-COPY ./target/devopsethods.jar /tmp
+COPY ./target/devops.jar /tmp
 WORKDIR /tmp
 ENTRYPOINT ["java", "-jar", "devops.jar", "db:3306", "30000"]
 ```
