@@ -6,7 +6,7 @@ The aim of this lab is to set-up our development environment for the module.  Th
 - IntelliJ
 - Maven
 - Git and GitHub
-- Docker
+- Docker 
 
 These provide a modern software development and delivery environment.  These tools will underpin the assessment for the module so getting everything set-up correctly is key.
 
