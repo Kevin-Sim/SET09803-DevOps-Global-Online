@@ -196,7 +196,7 @@ Click **Push** and refresh the GitHub page.  You should see your files there:
 
 We have done quite a bit so far, but we have yet to write any actual code.  The module focuses on software engineering and methods rather than programming, but it is worth testing things are working.  Let us build a simple *Hello World* example.
 
-In IntelliJ, **right-click** on the folder **devopsethods->src->main->java** and select **New** then **Package** to open the **New Package** window:
+In IntelliJ, **right-click** on the folder **devops->src->main->java** and select **New** then **Package** to open the **New Package** window:
 
 ![IntelliJ New Package](img/intellij-new-package.png)
 
@@ -549,7 +549,7 @@ IntelliJ should open the Docker panel at the bottom of the window:
 
 We are almost there.  It has been a long process to get to this stage, and it may seem we have not done any software development, which we haven't.  We have setup many processes which means our software development task will be easier.  Trust me!  The process might have been long in this first lab but we have made our lives substantially easier in the future.  Let us finish our process by deploying our application to a Docker image and running it.
 
-To finish our process we need to create a Dockerfile in IntelliJ.  **Right-click** on the project **devopsethods** and select **New** then **File** to open the **New File** window:
+To finish our process we need to create a Dockerfile in IntelliJ.  **Right-click** on the project **devops** and select **New** then **File** to open the **New File** window:
 
 ![IntelliJ New File](img/intellij-new-file.png)
 

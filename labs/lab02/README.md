@@ -318,7 +318,7 @@ We add this to the `pom.xml` file as follows:
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.napier.devops</groupId>
-    <artifactId>devopsethods</artifactId>
+    <artifactId>devops</artifactId>
     <version>0.1.0.1</version>
     
      <dependencies>
@@ -484,7 +484,7 @@ First rebuild your project so that everything is up to date: **Build** then **Bu
 
 ![IntelliJ with Maven Panel Open](img/intellij-maven-panel.png)
 
-Open the **Lifecycle** collapsed menu, and select **package** and click the **green triangle in the Maven panel** to start the package process.  This will take a few seconds as your code and the external JAR libraries are combined into a single JAR.  You will see this in the **target** folder in the **Project Structure** as `devopsethods-0.1.0.1-jar-with-dependencies.jar`.  So we have successfully built our project into a single JAR for deployment.  Time to push to GitHub.
+Open the **Lifecycle** collapsed menu, and select **package** and click the **green triangle in the Maven panel** to start the package process.  This will take a few seconds as your code and the external JAR libraries are combined into a single JAR.  You will see this in the **target** folder in the **Project Structure** as `devops-0.1.0.1-jar-with-dependencies.jar`.  So we have successfully built our project into a single JAR for deployment.  Time to push to GitHub.
 
 1. Add files to commit.
 2. Create commit.
@@ -523,9 +523,9 @@ We are now explicitly connecting to the server called `mongo-dbserver`, which is
 
 ```docker
 FROM openjdk:latest
-COPY ./target/devopsethods-0.1.0.1-jar-with-dependencies.jar /tmp
+COPY ./target/devops-0.1.0.1-jar-with-dependencies.jar /tmp
 WORKDIR /tmp
-ENTRYPOINT ["java", "-jar", "devopsethods-0.1.0.1-jar-with-dependencies.jar"]
+ENTRYPOINT ["java", "-jar", "devops-0.1.0.1-jar-with-dependencies.jar"]
 ```
 
 We have changed what we are copying to the JAR file that has been created.  We are also changing our entry point to execute this JAR.  We need to first update our jar file, rebuild the docker image and restart the container.

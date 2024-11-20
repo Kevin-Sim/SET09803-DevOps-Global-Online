@@ -183,7 +183,7 @@ Now we need to add a **Run/Debug Configuration**.  **Select Run then Edit Config
 Modify the dialogue to match.  That is:
 
 - Use the JUnit template on the left.
-- Select `devopsethods` as the classpath of module.
+- Select `devops` as the classpath of module.
 - Use `MyTest` as the Class.
 
 **Click OK** and IntelliJ is now ready to run the tests.

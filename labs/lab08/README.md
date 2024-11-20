@@ -45,7 +45,7 @@ We are going to modify our existing *build* stage in our GitHub Actions script s
 Let us consider the steps GitHub Actions will go through:
 
 1. It will checkout the repo as normal and setup the GitHub Actions Java environment.
-2. It will package the code to a jar with dependencies called `devopsethods` skipping the maven test stage.
+2. It will package the code to a jar with dependencies called `devops` skipping the maven test stage.
 3. The script uses the `"marvinpinto/action-automatic-releases@latest"` action to perform the following tasks:
     - Set the repository using the global variable `${{ secrets.GITHUB_TOKEN }}` This is automatically created by GitHub Actions
     - Set the release tag to `latest`
@@ -191,7 +191,7 @@ The complete Maven file is shown below for reference.
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.3.0</version>
                 <configuration>
-                    <finalName>devopsethods</finalName>
+                    <finalName>devops</finalName>
                     <archive>
                         <manifest>
                             <mainClass>com.napier.devops.App</mainClass>
@@ -253,7 +253,7 @@ The complete Maven file is shown below for reference.
 </project>
 ```
 
-Once happy with your changes merge them into master and push your changes to GitHub. Once GitHub Actions is complete if you look up your Releases you will see the new release there.  Note that `devopsethods.jar` has been added.
+Once happy with your changes merge them into master and push your changes to GitHub. Once GitHub Actions is complete if you look up your Releases you will see the new release there.  Note that `devops.jar` has been added.
 
 ![1](img/release.png)
 
@@ -387,7 +387,7 @@ First, we need Maven to treat our project as a child of a standard Spring projec
 ```xml
 # Existing code
 <groupId>com.napier.devops</groupId>
-<artifactId>devopsethods</artifactId>
+<artifactId>devops</artifactId>
 <version>0.1.0.8</version>
 
 # New code
@@ -414,7 +414,7 @@ We also need to change how Maven packages our application.  Change the `<artifac
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-maven-plugin</artifactId>
   <configuration>
-      <finalName>devopsethods</finalName>
+      <finalName>devops</finalName>
       <mainClass>com.napier.devops.App</mainClass>
   </configuration>
   <executions>

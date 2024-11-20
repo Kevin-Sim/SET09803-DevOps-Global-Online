@@ -76,18 +76,18 @@ We are going to modify our existing *Deploy* stage in our Travis script so it pu
         # This is the token we set before
         api_key: $GITHUB_OAUTH_TOKEN
         # Copy built JAR file to release.  JAR built in $TRAVIS_BUILD_DIR/target
-        file: $TRAVIS_BUILD_DIR/target/devopsethods.jar
+        file: $TRAVIS_BUILD_DIR/target/devops.jar
         skip_cleanup: true
 ```
 
 Let us consider the steps Travis will go through:
 
 1. It will pull the repo as normal.
-2. It will run the `script` section, which will package the JAR file.  Remember that this is called `devopsethods`.
+2. It will run the `script` section, which will package the JAR file.  Remember that this is called `devops`.
 3. The `before_deploy` section is run.  This will perform the following tasks:
     1. Set the username and email for committing the GitHub release.
     2. Tag the GitHub commit.  Remember, a release must be tagged.  We create a tag from the date (Year-month-day) and the current hashcode from the commit.  This code is reusable so don't worry too much about it.
-4. The `deploy` stage is then executed.  We tell Travis the `provider` (releases means GitHub releases), provide the `api_key` (our access token from before), and the file(s) to add.  `devopsethods.jar` has been created in the `$TRAVIS_BUILD_DIR/target/` folder.
+4. The `deploy` stage is then executed.  We tell Travis the `provider` (releases means GitHub releases), provide the `api_key` (our access token from before), and the file(s) to add.  `devops.jar` has been created in the `$TRAVIS_BUILD_DIR/target/` folder.
 
 For reference, the complete `.travis.yml` file is below:
 
@@ -138,7 +138,7 @@ jobs:
         provider: releases
         api_key: $GITHUB_OAUTH_TOKEN
         # Copy built JAR file.  JAR built in $TRAVIS_BUILD_DIR/
-        file: $TRAVIS_BUILD_DIR/target/devopsethods.jar
+        file: $TRAVIS_BUILD_DIR/target/devops.jar
         skip_cleanup: true
 
 stages:
@@ -151,7 +151,7 @@ after_success:
   - bash <(curl -s https://codecov.io/bash)
 ```
 
-If you go back to GitHub and look up your Releases you will see the new release there.  Note that `devopsethods.jar` has been added.
+If you go back to GitHub and look up your Releases you will see the new release there.  Note that `devops.jar` has been added.
 
 ![Release on GitHub](img/github-release.png)
 
@@ -182,7 +182,7 @@ First we need to create a project with Google Cloud Engine.  We do this via the 
 
 ![Google Cloud New Project](img/gcloud-new-project.png)
 
-Call the project a sensible name (e.g., devopsethods).  **Ensure billing is set up.**  You should have created an account as part of your Google Cloud Account set-up.
+Call the project a sensible name (e.g., devops).  **Ensure billing is set up.**  You should have created an account as part of your Google Cloud Account set-up.
 
 **Make sure you note the Project ID.  We will use this later.**
 
@@ -217,11 +217,11 @@ gcloud app create --region=europe-west2
 This is London.  See https://cloud.google.com/compute/docs/regions-zones/ for other zones.
 
 ```shell
-You are creating an app for project [devopsethods-234614].
+You are creating an app for project [devops-234614].
 WARNING: Creating an App Engine application for a project is irreversible and the region
 cannot be changed. More information about regions is at
 <https://cloud.google.com/appengine/docs/locations>.
-Creating App Engine application in project [devopsethods-234614] and region [europe-west2]....done.
+Creating App Engine application in project [devops-234614] and region [europe-west2]....done.
 Success! The app is now created. Please use `gcloud app deploy` to deploy your first app.
 ```
 
@@ -285,7 +285,7 @@ Now move the file into your repository folder.  In Google Cloud Shell enter:
 mv ~/<your_credentials_filename>.json ~/<your repo>/client-secret.json
 ```
 
-Where <your_repo> is the directory your repo was cloned to (e.g., `devops`, `devopsethods`).  Entering the name of the credentials file and your repository as needed.
+Where <your_repo> is the directory your repo was cloned to (e.g., `devops`, `devops`).  Entering the name of the credentials file and your repository as needed.
 
 #### Encrypting Credentials
 
@@ -486,7 +486,7 @@ jobs:
       # Token saved on Travis.
       api_key: "$GITHUB_OAUTH_TOKEN"
       # File to add to the release.
-      file: "$TRAVIS_BUILD_DIR/target/devopsethods.jar"
+      file: "$TRAVIS_BUILD_DIR/target/devops.jar"
       skip_cleanup: true
   - stage: Google Cloud Deploy
     install: skip
@@ -503,7 +503,7 @@ jobs:
       - gcloud auth activate-service-account --key-file client-secret.json
     script:
       # Set the project we will work in.
-      - gcloud config set project devopsethods-234809
+      - gcloud config set project devops-234809
       # Set the zone to work in.
       - gcloud config set compute/zone europe-west2-b
       # Assign project ID to a variable to make life easier
@@ -565,7 +565,7 @@ First, we need Maven to treat our project as a child of a standard Spring projec
 ```xml
 # Existing code
 <groupId>com.napier.devops</groupId>
-<artifactId>devopsethods</artifactId>
+<artifactId>devops</artifactId>
 <version>0.1.0.8</version>
 
 # New code
@@ -592,7 +592,7 @@ We also need to change how Maven packages our application.  Change the `<artifac
   <groupId>org.springframework.boot</groupId>
   <artifactId>spring-boot-maven-plugin</artifactId>
   <configuration>
-      <finalName>devopsethods</finalName>
+      <finalName>devops</finalName>
       <mainClass>com.napier.devops.App</mainClass>
   </configuration>
   <executions>
@@ -616,7 +616,7 @@ For reference, your `<build>` section of `pom.xml` should be:
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-maven-plugin</artifactId>
           <configuration>
-              <finalName>devopsethods</finalName>
+              <finalName>devops</finalName>
               <mainClass>com.napier.devops.App</mainClass>
           </configuration>
           <executions>
@@ -870,7 +870,7 @@ Now we need to update our `.travis.yml` file to allow Google Cloud Deployment.  
 ```yml
     script:
       # Set the project we will work in.
-      - gcloud config set project devopsethods-234809
+      - gcloud config set project devops-234809
       # Set the zone to work in.
       - gcloud config set compute/zone europe-west2-b
       # Assign project ID to a variable to make life easier
@@ -998,7 +998,7 @@ Now we just need to update our `script` to deploy to Google Cloud:
 ```yml
       script:
       # Set the project we will work in.
-      - gcloud config set project devopsethods-234809
+      - gcloud config set project devops-234809
       # Set the zone to work in.
       - gcloud config set compute/zone europe-west2-b
       # Assign project ID to a variable to make life easier
