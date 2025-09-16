@@ -42,11 +42,9 @@ You will require Java and IntelliJ installed on the machine you plan to work on.
 
 Click **Finish** for your new project to be created.  This should open up the following window:
 
-Change the Java compliance to at most 11 (below shows Java 10 on lines 11 & 12)
-
 ![IntelliJ Main Window](img/intellij-main-window.png)
 
-If you do not have this window then try the instructions again and if you still have a problem ask for help at the academic sessions. Please note that in the above screenshot version 11 should be the maximum for maven compiler source and target.
+If you do not have this window then try the instructions again and if you still have a problem ask for help at the academic sessions. 
 
 ## Git with IntelliJ
 
@@ -200,13 +198,11 @@ In IntelliJ, **right-click** on the folder **devops->src->main->java** and selec
 
 ![IntelliJ New Package](img/intellij-new-package.png)
 
-Call the package `com.napier.devops` and click **OK**.  Your **Project Structure** in IntelliJ should now look as follows:
+Call the package `com.napier.sem and click **OK**.  Your **Project Structure** in IntelliJ should now look as follows:
 
 ![IntelliJ Project Package](img/intellij-project-package.png)
 
-Now **right-click** on **com.napier.devops** and select **New** and **Class** to open the **New Class** window:
-
-![IntelliJ New Class](img/intellij-new-class.png)
+Now **right-click** on **com.napier.sem** and select **New** and **Class** to open the **New Class** window:
 
 Call the class **App** and click **OK**.  IntelliJ will helpfully ask if you want to add the file to your Git repository.  Select **Yes**.
 
@@ -559,7 +555,7 @@ Call the file **Dockerfile** and click **OK**.  Select **Yes** to add it to the 
 FROM openjdk:latest
 COPY ./target/classes/com /tmp/com
 WORKDIR /tmp
-ENTRYPOINT ["java", "com.napier.devops.App"]
+ENTRYPOINT ["java", "com.napier.sem.App"]
 ```
 
 We are using three new directives here:

@@ -120,14 +120,14 @@ on: push
 jobs:
   build:
     name: Hello world action
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Set up JDK 11
+      - name: Set up JDK 17
         uses: actions/setup-java@v2
         with:
-          java-version: '11'
+          java-version: '17'
           distribution: 'adopt'
       - name: Compile with Maven
         run: mvn compile
@@ -152,7 +152,9 @@ To check if our CI workflow is working make some changes and push them to GitHub
 
 Now we can go to GitHub see if our build was successful.  
 
-![1642967431174](img/1642967431174.png)
+click actions on GitHub
+
+![actions](img/actions.png)
 
 You can click on the **action** to show more details of the build.
 
@@ -561,14 +563,14 @@ on: push
 jobs:
   build:
     name: Hello world action
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Set up JDK 11
         uses: actions/setup-java@v2
         with:
-          java-version: '11'
+          java-version: '17'
           distribution: 'adopt'
       - name: Setup network
         run: |
