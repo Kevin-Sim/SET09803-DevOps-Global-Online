@@ -222,7 +222,7 @@ on: push
 jobs:
   UnitTests:
     name: Unit Tests
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -238,7 +238,7 @@ jobs:
 
   build:
     name: Build and Start Using docker-compose
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -318,7 +318,7 @@ on:
 jobs:
   UnitTests:
     name: Unit Tests
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -334,7 +334,7 @@ jobs:
 
   IntegrationTests:
     name: Integration Tests
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -356,7 +356,7 @@ jobs:
 
   build:
     name: Build and Start Using docker-compose
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -430,7 +430,7 @@ on:
 jobs:
   UnitTests:
     name: Unit Tests
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -446,7 +446,7 @@ jobs:
 
   IntegrationTests:
     name: Integration Tests
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -474,7 +474,7 @@ jobs:
           verbose: true # optional (default = false)
   build:
     name: Build and Start Using docker compose
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4

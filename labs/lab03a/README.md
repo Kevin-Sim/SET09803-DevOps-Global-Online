@@ -314,7 +314,7 @@ on: push
 jobs:
   build:
     name: Hello world action
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4

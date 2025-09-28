@@ -17,7 +17,7 @@ We are going to modify our existing *build* stage in our GitHub Actions script s
 ```yml
       build:
     name: Build Run in Docker and Deploy Release
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -63,7 +63,7 @@ on:
 jobs:
   UnitTests:
     name: Unit Tests
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -86,7 +86,7 @@ jobs:
 
   IntegrationTests:
     name: Integration Tests
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -114,7 +114,7 @@ jobs:
           verbose: true # optional (default = false)
   build:
     name: Build Run in Docker and Deploy Release
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
