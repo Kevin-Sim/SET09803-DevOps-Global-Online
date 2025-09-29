@@ -24,7 +24,7 @@
 You will work on the project as a Scrum team.  Details on Scrum are provided in [The Introduction](../units/unit00/ScrumAndTeamForming.md), including an FAQ on how to apply Scrum in the module.
 
 You work for an organisation that requires reporting on population information.  You have been tasked with designing and implementing a new system to allow easy access to this population information.  The organisation has provided you with an SQL database to work from available [here](https://dev.mysql.com/doc/index-other.html).
- 
+
 
 The organisation has asked for the following reports to be generated:
 
@@ -151,8 +151,8 @@ Any dismissed team member has a week to appeal the decision to the module team w
 
 Each group will undertake **two** graded code reviews:
 
-1. Week 6 Code Review 1 (50% of CW mark).
-2. Week 13 Code Review 2 (50% of CW mark).
+1. Week 6 or 7 Code Review 1 (50% of CW mark).
+2. Week 12 or 13 Code Review 2 (50% of CW mark).
 
 The code reviews will take place during the live academic sessions.  Each group will be given **10 minutes maximum** for the code review.  Your group will be **allocated a time for the code review**.  The details of the individual review points are below.  These meetings **must be attended** at the **stated time**.  Guidelines for grading the group:
 
@@ -165,7 +165,7 @@ The code reviews will take place during the live academic sessions.  Each group 
 
 ### Code Review 1
 
-#### REVIEW MEETING:  Week 6
+#### REVIEW MEETING:  Week 6 or 7
 
 The aim of this code review meeting is to check that the project workflow is set-up for the team, task management is set-up and that the initial requirements gathering has taken place via user stories and use cases. 
 
@@ -201,7 +201,7 @@ The following criteria will be assessed for overall quality:
 
 ### Code Review 2
 
-#### REVIEW MEETING: Week 13
+#### REVIEW MEETING: Week 12 or 13
 
 The aim of this code review is to check that testing and deployment has been correctly specified.  
 
