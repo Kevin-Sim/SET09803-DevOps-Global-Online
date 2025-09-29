@@ -21,7 +21,7 @@
 
 ## Coursework Specification
 
-You will work on the project as a Scrum team.  Details on Scrum are provided in [The Introduction](../units/unit00/ScrumAndTeamForming.md), including an FAQ on how to apply Scrum in the module.
+You will work on the project as a Scrum team.  Details on Scrum are provided in [Unit 01b](../units/unit01/unit01b.md)
 
 You work for an organisation that requires reporting on population information.  You have been tasked with designing and implementing a new system to allow easy access to this population information.  The organisation has provided you with an SQL database to work from available [here](https://dev.mysql.com/doc/index-other.html).
 
