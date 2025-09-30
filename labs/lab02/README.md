@@ -310,7 +310,7 @@ We will use Maven to manage the import of MongoDB functionality into our applica
     </dependencies>
 ```
 
-We add this to the `pom.xml` file as follows: 
+We add this to the `pom.xml` file which should now be as follows: 
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -323,7 +323,13 @@ We add this to the `pom.xml` file as follows:
     <artifactId>devops</artifactId>
     <version>0.1.0.1</version>
     
-     <dependencies>
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    
+    <dependencies>
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongodb-driver</artifactId>
