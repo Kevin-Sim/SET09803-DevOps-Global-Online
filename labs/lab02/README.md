@@ -310,7 +310,7 @@ We will use Maven to manage the import of MongoDB functionality into our applica
     </dependencies>
 ```
 
-We add this to the `pom.xml` file which should now be as follows: 
+We add this to the `pom.xml` file as follows: 
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -319,16 +319,16 @@ We add this to the `pom.xml` file which should now be as follows:
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.napier.devops</groupId>
-    <artifactId>devops</artifactId>
-    <version>0.1.0.1</version>
-    
+    <groupId>com.napier.sem</groupId>
+    <artifactId>seMethods</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    
+
     <dependencies>
         <dependency>
             <groupId>org.mongodb</groupId>
@@ -336,7 +336,7 @@ We add this to the `pom.xml` file which should now be as follows:
             <version>3.6.4</version>
         </dependency>
     </dependencies>
-
+    
 </project>
 ```
 
