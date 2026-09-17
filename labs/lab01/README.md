@@ -276,9 +276,9 @@ Although the container has stopped it has not been removed from your system. To 
 docker ps -a
 ```
 
-You will get output similar to the following:
+You will get output similar to the following.
 
-![containerlist](img\containerlist.png)
+![containerlist](img/containerlist.png)
 
 To remove a container we use the `rm` command with the name or container ID:
 
@@ -414,11 +414,7 @@ We can run the Dockerfile using the green arrow
 
 If successful you should get a console output like
 
-```bash
-
-```
-
-![docker output](img/docker output.png)
+![docker output](img/dockeroutput.png)
 
 
 
