@@ -65,7 +65,7 @@ Note that GitHub now prefers a token for authentication rather than a password.
 
 Standard password login seems to work fine in IntelliJ with GitHub now so skip this step for now. If you have issues authenticating come back to this step.
 
-[Next Section](##Adding CI to Your Repository)
+[Next Section](#adding-ci-to-your-repository)
 
 Go to your GitHub account. From the menu at the top right select settings
 
@@ -127,12 +127,12 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Set up JDK 17
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v5
         with:
           java-version: '17'
-          distribution: 'adopt'
+          distribution: 'temurin'
       - name: Compile with Maven
         run: mvn compile
       - name: Build Docker Image
@@ -140,7 +140,7 @@ jobs:
       - name: Run image
         run: docker run --name devopscontainer -d devopsimage
       - name: view logs
-        run: docker logs devopscontainer
+        run: docker logs -f devopscontainer
 ```
 
 To sync our local version do a pull from IntelliJ 
@@ -488,7 +488,7 @@ We have added two new sections:
 
 1. `properties` - here we are telling Maven to produce Java 8 code (1.8).
 2. `build` - there is quite a bit going on here.  You can happily reuse the code though:
-    - We are defining how Maven asdevopsbles the JAR file.
+    - We are defining how Maven builds the JAR file.
     - We are telling Maven which class to run when the JAR is executed (`mainClass`).
     - We are telling Maven to build the `jar-with-dependencies` - in other words pull in the MongoDB code.
 
