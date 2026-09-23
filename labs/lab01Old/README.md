@@ -1,5 +1,29 @@
 # Lab 01: Set-up
 
+## Fix for Some direct entry students 
+
+If you are a direct entrant from college and are trying this Lab on the machines in D2 you may come across a problem where the version of Windows Subsystem for Linux (wsl) needs updated but you do not have the correct privileges. Below should solve the problem
+
+From a command prompt or PowerShell window type wsl --update 
+
+1) Problem: No deployment rights error when running wsl --update (occurred with many college entry students)
+
+Fix: Open the Local group policy editor -> start menu-> run and type **gpedit.msc**
+
+**administrator templates -> Windows Components -> App Package Deployment ** and enable **Allow deployment operations in special profiles**
+
+
+
+![1758285575988](img/1758285575988.png)
+
+2) Problem: wsl --update stuck at 0%
+
+Fix: Run **wsl --update --web-download**
+
+-------------------------------------------------------------------------------------------
+
+# Back to Lab
+
 The aim of this lab is to set-up our development environment for the module.  There are a number of tools we are using in the module and we will set most of them up today.  The systems we will be using are:
 
 - Java
@@ -552,7 +576,7 @@ To finish our process we need to create a Dockerfile in IntelliJ.  **Right-click
 Call the file **Dockerfile** and click **OK**.  Select **Yes** to add it to the Git repository.  The contents of the file are as follows:
 
 ```docker
-FROM FROM amazoncorretto:17
+FROM amazoncorretto:17
 COPY ./target/classes/com /tmp/com
 WORKDIR /tmp
 ENTRYPOINT ["java", "com.napier.sem.App"]
